@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anto Francis: Projects</title>
+  <meta name="description" content="Machine learning and full-stack projects by Anto Francis, with live demos you can run in the page.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#repos">Skip to all projects</a>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <p class="brand">Anto Francis</p>
+      <nav aria-label="Profiles">
+        <a href="https://github.com/DevFrancisA">GitHub</a>
+        <a href="https://www.linkedin.com/in/anto-francis-csmajor/">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-side">
+          <h1 id="hero-title">Machine learning and full-stack projects</h1>
+          <p class="lede">I'm a computer science student at the University of Georgia. <span id="demo-count">Several</span> of these projects run live. Pick one and run it here.</p>
+          <div id="demo-list" class="demo-list" role="tablist" aria-label="Live demos" aria-orientation="vertical"></div>
+        </div>
+        <div class="viewer" id="viewer" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="repos" id="repos" aria-labelledby="repos-title">
+      <div class="wrap">
+        <div class="repos-head">
+          <h2 id="repos-title">All projects</h2>
+          <label class="search">
+            <span class="sr">Filter projects</span>
+            <input id="q" type="search" placeholder="Filter by name, tool, or topic" autocomplete="off">
+          </label>
+        </div>
+        <div id="chips" class="chips" role="group" aria-label="Filter by topic"></div>
+        <p id="count" class="count" aria-live="polite"></p>
+        <ul id="list" class="list"></ul>
+        <div id="empty" class="empty" hidden>
+          <p>No projects match <strong id="empty-q"></strong>.</p>
+          <button type="button" id="clear" class="btn">Clear filters</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Every project links to its source on GitHub. Demo data is simulated where the project says so.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
