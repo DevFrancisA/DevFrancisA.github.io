@@ -96,7 +96,7 @@
     demos.forEach(function (p) {
       var b = el("button", { type: "button", "class": "demo-tab", role: "tab", id: "tab-" + p.id,
         "aria-selected": String(current === p), "aria-controls": "viewer" }, [
-        el("span", { "class": "t", text: p.name }),
+        el("span", { "class": "t" }, [el("span", { "class": "dot", "aria-hidden": "true" }), document.createTextNode(p.name)]),
         el("span", { "class": "d", text: p.blurb })
       ]);
       b.addEventListener("click", function () { select(p); });
@@ -186,6 +186,7 @@
     var shown = PROJECTS.filter(matches);
     shown.forEach(function (p) {
       var name = el("h3", { "class": "r-name" }, [document.createTextNode(p.name)]);
+      if (p.demo) name.appendChild(el("span", { "class": "r-live", text: "Live demo" }));
       if (p.org) name.appendChild(el("span", { "class": "r-org", text: p.org }));
       var left = el("div", {}, [name, el("p", { "class": "r-sum", text: p.blurb + (p.detail ? " " + p.detail : "") })]);
       if (p.stack.length) {
